@@ -27,7 +27,7 @@ const Header = () => {
                                    <Nav.Link href="#pricing">About</Nav.Link>
                                    <Nav.Link href="#pricing">Career</Nav.Link>
                               </Nav>
-                              <Nav>
+                              <Nav className='align-items-center'>
                                    <Nav.Link href="#deets">Profile</Nav.Link>
                                    <Nav.Link eventKey={2} href="#memes">
                                    <Button variant="secondary">Login</Button>
