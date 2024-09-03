@@ -12,7 +12,7 @@ const Header = () => {
                     <p><small className='text-secondary'>Journalism Without Fear or Favour</small></p>
                     <p>{moment().format('dddd, MMMM D, YYYY')}</p>
                </div>
-               <div className='d-flex' style={{ backgroundColor: '#F3F3F3' }}>
+               <div className='d-flex p-2' style={{ backgroundColor: '#F3F3F3' }}>
                     <Button variant="danger">Breaking...</Button>
                     <Marquee>
                          I can be a React component, multiple React components, or just some text..... I can be a React component, multiple React components, or just some text.
