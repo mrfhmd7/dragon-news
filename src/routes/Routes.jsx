@@ -8,15 +8,16 @@ import News from "../pages/News/News/News";
 const router = createBrowserRouter([
      {
           path: '/',
-          element: <Main></Main>,
+          element: <Main/>,
           children: [
                {
                     path: '/',
-                    element: <Home></Home>
+                    element: <Home/>,
                },
                {
                     path: '/category/:id',
-                    element: <Category/>
+                    element: <Category />,
+                    loader: (({params}) => fetch(`http://localhost:5000/categories/${params.id}`))
                }
           ]
      },
