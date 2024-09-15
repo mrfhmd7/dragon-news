@@ -13,7 +13,7 @@ const NavigationBar = () => {
                          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                          <Navbar.Collapse id="responsive-navbar-nav">
                               <Nav className="mx-auto">
-                                   <Nav.Link href="/">Home</Nav.Link>
+                                   <Nav.Link href="/category/0">Home</Nav.Link>
                                    <Nav.Link href="#pricing">About</Nav.Link>
                                    <Nav.Link href="#pricing">Career</Nav.Link>
                               </Nav>
@@ -28,7 +28,7 @@ const NavigationBar = () => {
                                         user ?
                                              <Button variant="secondary">Log Out</Button>
                                              :
-                                             <Link to="login">
+                                             <Link to="/login">
                                                   <Button variant="secondary">Login</Button>
                                              </Link>
                                    }
