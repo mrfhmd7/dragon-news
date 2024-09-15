@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import EditorsInsight from '../../News/EditorsInsight/EditorsInsight';
 
 const LeftNav = () => {
 
@@ -29,6 +30,7 @@ const LeftNav = () => {
                          </p>)
                     }
                </div>
+               <EditorsInsight direction="column" />
           </div>
      );
 };

@@ -1,13 +1,13 @@
 import React from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import first from '../../../assets/1.png'
 import second from '../../../assets/2.png'
 import third from '../../../assets/3.png'
 import { BsCalendar4 } from 'react-icons/bs';
 
-const EditorsInsight = () => {
+const EditorsInsight = ({ direction = 'row' }) => {
      return (
-          <Row xs={1} md={2} lg={3} className="g-4 mt-4">
+          <div className={`d-flex ${direction === 'column' ? 'flex-column' : 'flex-row'} gap-4 mt-4`}>
                <Col>
                     <Card>
                          <Card.Img variant="top" src={first} />
@@ -44,7 +44,7 @@ const EditorsInsight = () => {
                          </div>
                     </Card>
                </Col>
-          </Row>
+          </div>
      );
 };
 
