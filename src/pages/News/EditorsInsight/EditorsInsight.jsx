@@ -5,9 +5,9 @@ import second from '../../../assets/2.png'
 import third from '../../../assets/3.png'
 import { BsCalendar4 } from 'react-icons/bs';
 
-const EditorsInsight = ({ direction = 'row' }) => {
+const EditorsInsight = ({ direction }) => {
      return (
-          <div className={`d-flex ${direction === 'column' ? 'flex-column' : 'flex-row'} gap-4 mt-4`}>
+          <div className={`d-flex ${direction == 'column' ? 'flex-column' : 'flex-row'} gap-4 mt-4`}>
                <Col>
                     <Card>
                          <Card.Img variant="top" src={first} />

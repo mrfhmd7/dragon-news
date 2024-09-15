@@ -22,7 +22,7 @@ const News = () => {
                          </Link>
                     </Card.Body>
                </Card>
-               <EditorsInsight direction="row" />
+               <EditorsInsight/>
           </div>
      );
 };
