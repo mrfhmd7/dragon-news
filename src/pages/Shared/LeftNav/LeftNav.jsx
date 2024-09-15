@@ -23,7 +23,6 @@ const LeftNav = () => {
                               <NavLink
                                    to={`/category/${category.id}`}
                                    className='text-decoration-none text-black'
-                                   activeClassName="active-category"
                               >
                                    {category.name}
                               </NavLink>
