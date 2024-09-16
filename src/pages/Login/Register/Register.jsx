@@ -1,8 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Register = () => {
      const [termsAccepted, setTermsAccepted] = useState(false);
+
+     const { createUser } = useContext(AuthContext);
+
+     const handleRegister = event => {
+          event.preventDefault();
+
+          const form = event.target;
+          const name = form.name.value;
+          const photo = form.photo.value;
+          const email = form.email.value;
+          const password = form.password.value;
+          console.log(name,photo, email, password);
+     }
 
      return (
           <Container className="d-flex justify-content-center align-items-center mt-5">
@@ -10,7 +25,7 @@ const Register = () => {
                     <Col md={6} lg={5} className="mx-auto">
                          <div className="shadow p-4 rounded bg-white">
                               <h3 className="text-center mb-4">Register your account</h3>
-                              <Form>
+                              <Form onSubmit={handleRegister}>
                                    <Form.Group controlId="formName" className="mb-3">
                                         <Form.Label>Your Name</Form.Label>
                                         <Form.Control type="text" name="name" placeholder="Enter your name"  required/>
@@ -44,6 +59,10 @@ const Register = () => {
                                         Register
                                    </Button>
                               </Form>
+                              <div className="text-center mt-3">
+                                   <span>Already Have An Account? </span>
+                                   <Link to="/login" className="text-danger">Login</Link>
+                              </div>
                          </div>
                     </Col>
                </Row>
