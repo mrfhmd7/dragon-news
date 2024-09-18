@@ -6,6 +6,9 @@ import { AuthContext } from '../../../providers/AuthProvider';
 const Register = () => {
      const [termsAccepted, setTermsAccepted] = useState(false);
 
+     //second way to checkbox for terms and conditions
+     //const [accepted, setAccepted] = useState(false);
+
      const { createUser } = useContext(AuthContext);
 
      const handleRegister = event => {
@@ -16,17 +19,27 @@ const Register = () => {
           const photo = form.photo.value;
           const email = form.email.value;
           const password = form.password.value;
-          console.log(name,photo, email, password);
+          console.log(name, photo);
 
           createUser(email, password)
                .then(result => {
                     const createdUser = result.user;
                     console.log(createdUser);
+                    form.reset();
                })
                .catch(error => {
-               console.log(error);
-          })
+                    console.log(error);
+               })
      }
+     {
+     /*
+     const handleAccepted = event => { 
+          setAccepted(event.target.checked)
+          console.log(event.target.checked);
+     }
+     */
+     }
+
 
      return (
           <Container className="d-flex justify-content-center align-items-center mt-5">
@@ -37,7 +50,7 @@ const Register = () => {
                               <Form onSubmit={handleRegister}>
                                    <Form.Group controlId="formName" className="mb-3">
                                         <Form.Label>Your Name</Form.Label>
-                                        <Form.Control type="text" name="name" placeholder="Enter your name"  required/>
+                                        <Form.Control type="text" name="name" placeholder="Enter your name" required />
                                    </Form.Group>
 
                                    <Form.Group controlId="formPhotoURL" className="mb-3">
@@ -47,20 +60,22 @@ const Register = () => {
 
                                    <Form.Group controlId="formEmail" className="mb-3">
                                         <Form.Label>Email</Form.Label>
-                                        <Form.Control type="email" name="email" placeholder="Enter your email address" required/>
+                                        <Form.Control type="email" name="email" placeholder="Enter your email address" required />
                                    </Form.Group>
 
                                    <Form.Group controlId="formPassword" className="mb-3">
                                         <Form.Label>Password</Form.Label>
-                                        <Form.Control type="password" name="password" placeholder="Enter your password" required/>
+                                        <Form.Control type="password" name="password" placeholder="Enter your password" required />
                                    </Form.Group>
 
                                    <Form.Group controlId="formTerms" className="mb-3">
                                         <Form.Check
                                              type="checkbox"
-                                             label="Accept Term & Conditions"
+                                             name="accept"
+                                             label={<>Accept <Link to="/terms">Terms and Conditions</Link></>}
                                              checked={termsAccepted}
                                              onChange={() => setTermsAccepted(!termsAccepted)}
+                                        //onClick={handleAccepted}
                                         />
                                    </Form.Group>
 
