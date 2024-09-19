@@ -17,9 +17,11 @@ const RightNav = () => {
                          <ListGroup.Item> <FaTwitter /> Twitter</ListGroup.Item>
                          <ListGroup.Item> <FaInstagram /> Instagram</ListGroup.Item>
                     </ListGroup>
-                    <QZone></QZone>
-                    <div className='text-center mt-5'>
-                         <img src={bg} alt="" />
+                    <QZone />
+                    <div className='text-center mt-3' style={{ backgroundImage: `url(${bg})`, padding: '50px 20px', color: 'white', backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '10px' }}>
+                         <h3>Create an Amazing Newspaper</h3>
+                         <p>Discover thousands of options, easy to customize layouts, one-click to import demo, and much more.</p>
+                         <Button variant="danger">Learn More</Button>
                     </div>
                </div>
           </div>
